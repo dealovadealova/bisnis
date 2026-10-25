@@ -9,9 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0f766e; /* Teal yang menenangkan tapi profesional */
+            --primary: #0f766e;
             --primary-light: #ccfbf1;
-            --accent: #f59e0b; /* Amber untuk highlight */
+            --accent: #f59e0b;
             --bg: #f8fafc;
             --text-dark: #0f172a;
             --text-gray: #475569;
@@ -31,14 +31,14 @@
 
         .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
-        /* HERO SECTION: MASALAH KLIEN */
+        /* HERO SECTION */
         .hero {
             padding: 80px 0 20px;
             text-align: center;
             background: linear-gradient(180deg, #f0fdfa 0%, var(--bg) 100%);
         }
 
-                .pain-badge {
+        .pain-badge {
             display: inline-block;
             background: linear-gradient(90deg, #ff0000, #ffcc00, #ff0000);
             background-size: 200% auto;
@@ -55,48 +55,24 @@
             border: 2px solid #ffffff;
         }
 
-        /* Animasi Efek Guntur/Petir */
         @keyframes thunderFlash {
-            0% {
-                background-position: 0% 50%;
-                box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
-                transform: scale(1);
-            }
-            100% {
-                background-position: 100% 50%;
-                box-shadow: 0 0 40px rgba(255, 255, 0, 1); /* Kilatan kuning terang */
-                transform: scale(1.08);
-            }
+            0% { background-position: 0% 50%; box-shadow: 0 0 10px rgba(255, 0, 0, 0.8); transform: scale(1); }
+            100% { background-position: 100% 50%; box-shadow: 0 0 40px rgba(255, 255, 0, 1); transform: scale(1.08); }
         }
 
-        .hero h1 {
-            font-size: 36px;
-            font-weight: 800;
-            line-height: 1.3;
-            margin-bottom: 20px;
-            color: var(--text-dark);
-        }
-
+        .hero h1 { font-size: 36px; font-weight: 800; line-height: 1.3; margin-bottom: 20px; color: var(--text-dark); }
         .hero h1 span { color: var(--primary); }
+        .hero p { font-size: 18px; color: var(--text-gray); max-width: 700px; margin: 0 auto 30px; }
 
-        .hero p {
-            font-size: 18px;
-            color: var(--text-gray);
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-
-                        /* Container Grid untuk Memaksa 1 Baris Mendatar */
         .pain-points {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Membagi menjadi 3 kolom sama rata */
+            grid-template-columns: repeat(3, 1fr);
             gap: 15px;
             width: 100%;
             max-width: 800px;
             margin: 0 auto 40px;
         }
 
-        /* Kotak Masalah dengan Warna Presisi */
         .pain-item {
             padding: 20px 10px;
             border-radius: 16px;
@@ -104,7 +80,7 @@
             font-weight: 800;
             color: #ffffff;
             display: flex;
-            flex-direction: column; /* Ikon di atas, teks di bawah */
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
@@ -114,27 +90,11 @@
             line-height: 1.3;
         }
 
-        .pain-item:hover {
-            transform: translateY(-5px);
-        }
+        .pain-item:hover { transform: translateY(-5px); }
+        .pain-item:nth-child(1) { background: linear-gradient(135deg, #ef4444 0%, #991b1b 100%); }
+        .pain-item:nth-child(2) { background: linear-gradient(135deg, #f97316 0%, #c2410c 100%); }
+        .pain-item:nth-child(3) { background: linear-gradient(135deg, #6366f1 0%, #3730a3 100%); }
 
-        /* PALET WARNA PRESISI SESUAI MASALAH */
-        /* 1. Merah Darah: Kerugian / Omzet Macet */
-        .pain-item:nth-child(1) {
-            background: linear-gradient(135deg, #ef4444 0%, #991b1b 100%);
-        }
-        
-        /* 2. Orange Menyala: Peringatan / Website Lambat */
-        .pain-item:nth-child(2) {
-            background: linear-gradient(135deg, #f97316 0%, #c2410c 100%);
-        }
-        
-        /* 3. Indigo/Ungu: Kompleksitas / Pusing Ngoding */
-        .pain-item:nth-child(3) {
-            background: linear-gradient(135deg, #6366f1 0%, #3730a3 100%);
-        }
-
-        /* Ikon di dalam kotak */
         .pain-icon {
             font-size: 28px;
             background: rgba(255, 255, 255, 0.2);
@@ -143,34 +103,24 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%; /* Membuat background ikon jadi bulat */
+            border-radius: 50%;
         }
 
-        /* Agar tetap rapi di HP layar kecil */
         @media (max-width: 600px) {
-            .pain-points {
-                gap: 10px;
-            }
-            .pain-item {
-                padding: 15px 5px;
-                font-size: 12px; /* Font mengecil sedikit agar muat 1 baris */
-            }
-            .pain-icon {
-                width: 35px;
-                height: 35px;
-                font-size: 20px;
-            }
+            .pain-points { gap: 10px; }
+            .pain-item { padding: 15px 5px; font-size: 12px; }
+            .pain-icon { width: 35px; height: 35px; font-size: 20px; }
         }
 
         /* SOLUSI / JASA */
-                .section-title {
+        .section-title {
             text-align: center;
             margin-bottom: 40px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-                        .section-title h2 {
+        .section-title h2 {
             display: inline-block;
             background: linear-gradient(90deg, #ff0000, #ffcc00, #ff0000);
             background-size: 200% auto;
@@ -186,12 +136,6 @@
             animation: thunderFlash 1s infinite alternate;
             border: 2px solid #ffffff;
         }
-
-        /* Animasi Kilau Teks */
-        @keyframes textShine {
-            0% { background-position: 0% center; }
-            100% { background-position: 200% center; }
-        }
         .section-title p { color: var(--text-gray); font-size: 16px; }
 
         .services { padding: 10px 0 60px; }
@@ -200,6 +144,14 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
+        }
+
+        /* UPDATE: Menambahkan style agar <a> tag terlihat seperti div biasa tanpa garis bawah */
+        a.card {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
         }
 
         .card {
@@ -211,11 +163,11 @@
             border: 1px solid #e2e8f0;
             position: relative;
             overflow: hidden;
+            height: 100%; /* Agar tinggi semua kotak sama rata */
         }
 
-                .card:hover {
+        .card:hover {
             transform: translateY(-8px);
-            /* Efek Cahaya Menyala (Glowing) */
             box-shadow: 0 20px 40px -10px rgba(15, 118, 110, 0.5); 
             border-color: #0f766e;
             border-width: 2px;
@@ -234,7 +186,7 @@
         }
 
         .card h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
-        .card p { font-size: 14px; color: var(--text-gray); margin-bottom: 20px; }
+        .card p { font-size: 14px; color: var(--text-gray); margin-bottom: 20px; flex-grow: 1; }
         
         .card-tag {
             font-size: 12px;
@@ -242,6 +194,9 @@
             color: var(--primary);
             text-transform: uppercase;
             letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         /* SUPER SMART TOOLS SECTION */
@@ -354,21 +309,20 @@
             <h1>Punya Produk Bagus atau Konten Berkah, <br><span>Tapi Susah Menjangkau Lebih Banyak Orang?</span></h1>
             <p>Website lambat, desain berantakan, dan ribet update. Calon pembeli kabur karena tidak ada katalog yang jelas. Pesan dakwah tidak tersampaikan karena teks Arab berantakan.</p>
             
-            <!-- TEMPEL KODE BARU INI DI SINI -->
-<div class="pain-points">
-    <div class="pain-item">
-        <span class="pain-icon">📉</span>
-        Omzet macet, buyer bingung
-    </div>
-    <div class="pain-item">
-        <span class="pain-icon">🐌</span>
-        Website lemot, iklan aneh
-    </div>
-    <div class="pain-item">
-        <span class="pain-icon">🤯</span>
-        Ribet ngoding, lama banget
-    </div>
-</div>
+            <div class="pain-points">
+                <div class="pain-item">
+                    <span class="pain-icon">📉</span>
+                    Omzet macet, buyer bingung
+                </div>
+                <div class="pain-item">
+                    <span class="pain-icon">🐌</span>
+                    Website lemot, iklan aneh
+                </div>
+                <div class="pain-item">
+                    <span class="pain-icon">🤯</span>
+                    Ribet ngoding, lama banget
+                </div>
+            </div>
         </div>
     </section>
 
@@ -412,6 +366,15 @@
                     <p>Halaman portofolio atau bio link yang estetik, cepat, dan privat. Tanpa foto wajah, fokus pada tipografi dan objek yang elegan.</p>
                     <div class="card-tag">Estetik & Privat 🎨</div>
                 </div>
+
+                <!-- ✨ BARU: Ebook Pengembangan Diri (Dibuat sebagai Link yang bisa diklik seluruh kotaknya) -->
+                <a href="https://lyink.id/perssatu" target="_blank" class="card">
+                    <div class="card-icon">📚</div>
+                    <h3>Ebook Pengembangan Diri</h3>
+                    <p>Panduan praktis dan terstruktur untuk mengasah mindset, meningkatkan produktivitas, dan meraih versi terbaik dari diri Anda.</p>
+                    <div class="card-tag" style="color: var(--accent);">Baca Sekarang ➔</div>
+                </a>
+
             </div>
         </div>
     </section>
@@ -427,7 +390,7 @@
                 <div class="tool-item">⚡ Auto-Generate HTML Struktur</div>
                 <div class="tool-item">🔗 Smart Affiliate Link Builder</div>
                 <div class="tool-item">📝 Arabic Text Formatter</div>
-                <div class="tool-item"> Dynamic Theme Injector</div>
+                <div class="tool-item">🎨 Dynamic Theme Injector</div>
             </div>
         </div>
     </section>
