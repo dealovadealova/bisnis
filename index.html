@@ -166,6 +166,13 @@
             height: 100%; /* Agar tinggi semua kotak sama rata */
         }
 
+        a.card {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+        
         .card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px -10px rgba(15, 118, 110, 0.5); 
@@ -335,13 +342,14 @@
             </div>
             
             <div class="grid">
-                <!-- Jasa 1 -->
-                <div class="card">
-                    <div class="card-icon">🛍️</div>
-                    <h3>Showcase Affiliate & UMKM</h3>
-                    <p>Website katalog produk super cepat. Fokus 100% pada keunggulan produk, tombol WhatsApp otomatis, dan desain yang membuat buyer langsung klik beli!</p>
-                    <div class="card-tag">Konversi Tinggi ⚡</div>
-                </div>
+                
+                <!-- Jasa 1 (Sekarang jadi Link) -->
+<a href="layanan-showcase.html" class="card">
+    <div class="card-icon">🛍️</div>
+    <h3>Showcase Affiliate & UMKM</h3>
+    <p>Website katalog produk super cepat. Fokus 100% pada keunggulan produk, tombol WhatsApp otomatis, dan desain yang membuat buyer langsung klik beli!</p>
+    <div class="card-tag">Lihat Pilihan Paket ➔</div>
+</a>
 
                 <!-- Jasa 2 -->
                 <div class="card">
