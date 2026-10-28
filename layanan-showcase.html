@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilih Layanan - Solusi Digital Mas Irkham</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f766e;
+            --primary-light: #ccfbf1;
+            --accent: #f59e0b;
+            --bg: #f8fafc;
+            --text-dark: #0f172a;
+            --text-gray: #475569;
+            --white: #ffffff;
+            --wa: #25D366;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* HEADER HALAMAN */
+        .page-header {
+            padding: 60px 0 40px;
+            text-align: center;
+            background: linear-gradient(180deg, #f0fdfa 0%, var(--bg) 100%);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 20px;
+            transition: opacity 0.3s;
+        }
+        .back-link:hover { opacity: 0.7; }
+
+        .page-header h1 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        .page-header p {
+            font-size: 16px;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* GRID LAYANAN */
+        .services-menu { padding: 20px 0 80px; }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .menu-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(15, 118, 110, 0.15);
+            border-color: var(--primary);
+        }
+
+        /* Badge Populer */
+        .badge-popular {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--accent);
+            color: white;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            text-transform: uppercase;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .menu-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            background: var(--primary-light);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+        }
+
+        .menu-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+        .menu-card p { font-size: 14px; color: var(--text-gray); margin-bottom: 20px; flex-grow: 1; }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        .features-list li {
+            font-size: 13px;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .features-list li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .btn-order {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 15px;
+            transition: background 0.3s;
+        }
+        .btn-order:hover { background: #0d5f58; }
+        
+        .btn-order.wa { background: var(--wa); }
+        .btn-order.wa:hover { background: #20bd5a; }
+
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 26px; }
+            .menu-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <section class="page-header">
+        <div class="container">
+            <a href="index.html" class="back-link">&larr; Kembali ke Beranda</a>
+            <h1>Pilih Paket Layanan Showcase & Website</h1>
+            <p>Semua layanan di bawah ini dikerjakan menggunakan <b>"Super Smart Tools"</b> buatan sendiri, sehingga prosesnya cepat, presisi, dan mudah Anda kelola kedepannya.</p>
+        </div>
+    </section>
+
+    <!-- MENU LAYANAN -->
+    <section class="services-menu">
+        <div class="container">
+            <div class="menu-grid">
+                
+                <!-- LAYANAN 1: SHOWCASE AFFILIATE (BEST SELLER) -->
+                <div class="menu-card">
+                    <div class="badge-popular">Terlaris</div>
+                    <div class="menu-icon">🛍️</div>
+                    <h3>Showcase Affiliate (Google Sheets)</h3>
+                    <p>Website katalog produk yang terhubung langsung ke Google Sheets. Tambah produk semudah mengetik di Excel!</p>
+                    <ul class="features-list">
+                        <li>Database Google Sheets (Auto-Update)</li>
+                        <li>Fitur Cari & Filter Kategori</li>
+                        <li>Tombol WhatsApp & Shopee/TikTok</li>
+                        <li>Gratis Domain .my.id (1 Tahun)</li>
+                        <li>Panduan PDF & Video Tutorial</li>
+                    </ul>
+                    <a href="https://wa.me/628562670252?text=Halo%20Mas%20Irkham,%20saya%20tertarik%20order%20paket%20Showcase%20Affiliate%20(Google%20Sheets).%20Boleh%20info%20harganya?" class="btn-order wa" target="_blank">Pesan via WhatsApp</a>
+                </div>
+
+                <!-- LAYANAN 2: LANDING PAGE PRODUK -->
+                <div class="menu-card">
+                    <div class="menu-icon">🚀</div>
+                    <h3>Landing Page Penjualan</h3>
+                    <p>Halaman khusus 1 produk dengan struktur Copywriting yang memaksa pengunjung untuk klik beli. Cocok untuk iklan.</p>
+                    <ul class="features-list">
+                        <li>Desain Fokus Konversi (High CTR)</li>
+                        <li>Struktur: Headline, Masalah, Solusi, Testimoni</li>
+                        <li>Tombol Sticky WhatsApp di Mobile</li>
+                        <li>Loading Super Cepat (Score 90+)</li>
+                        <li>Revisi Desain 2x</li>
+                    </ul>
+                    <a href="https://wa.me/628562670252?text=Halo%20Mas%20Irkham,%20saya%20tertarik%20order%20paket%20Landing%20Page%20Penjualan." class="btn-order" target="_blank">Pesan via WhatsApp</a>
+                </div>
+
+                <!-- LAYANAN 3: LINK-IN-BIO PREMIUM -->
+                <div class="menu-card">
+                    <div class="menu-icon">🔗</div>
+                    <h3>Link-in-Bio Premium</h3>
+                    <p>Ganti Linktree dengan halaman bio estetik milik sendiri. Tanpa biaya bulanan, tanpa iklan orang lain.</p>
+                    <ul class="features-list">
+                        <li>Desain Minimalis & Elegan</li>
+                        <li>Bisa Pakai Domain Sendiri</li>
+                        <li>Integrasi Analytics Sederhana</li>
+                        <li>Tanpa Biaya Langganan Bulanan</li>
+                        <li>Proses Jadi 1 Hari</li>
+                    </ul>
+                    <a href="https://wa.me/628562670252?text=Halo%20Mas%20Irkham,%20saya%20tertarik%20order%20paket%20Link-in-Bio%20Premium." class="btn-order" target="_blank">Pesan via WhatsApp</a>
+                </div>
+
+                <!-- LAYANAN 4: WEBSITE ISLAMI / DAKWAH -->
+                <div class="menu-card">
+                    <div class="menu-icon">🕌</div>
+                    <h3>Website Islami & Dakwah</h3>
+                    <p>Platform khusus untuk konten Islami, jadwal sholat, atau katalog buku/baju muslim dengan font Arab yang valid.</p>
+                    <ul class="features-list">
+                        <li>Font & Teks Arab 100% Valid (Tanpa Bertumpuk)</li>
+                        <li>Tema Warna Tenang & Syar'i</li>
+                        <li>Fitur Audio Murottal (Opsional)</li>
+                        <li>Database Konten via Google Sheets</li>
+                        <li>Gratis Konsultasi Konten</li>
+                    </ul>
+                    <a href="https://wa.me/628562670252?text=Halo%20Mas%20Irkham,%20saya%20tertarik%20order%20paket%20Website%20Islami%20/%20Dakwah." class="btn-order" target="_blank">Pesan via WhatsApp</a>
+                </div>
+
+                <!-- LAYANAN 5: KALKULATOR / TOOLS KHUSUS -->
+                <div class="menu-card">
+                    <div class="menu-icon">🧮</div>
+                    <h3>Custom Web Tools</h3>
+                    <p>Butuh alat bantu di website? Misal: Kalkulator KPR, Kalkulator Zakat, atau Generator Teks Arab.</p>
+                    <ul class="features-list">
+                        <li>Dibuat Sesuai Kebutuhan Spesifik</li>
+                        <li>Logika Perhitungan Akurat</li>
+                        <li>UI/UX Modern & Mobile Friendly</li>
+                        <li>Bisa di-embed di website existing</li>
+                        <li>Source Code Diberikan</li>
+                    </ul>
+                    <a href="https://wa.me/628562670252?text=Halo%20Mas%20Irkham,%20saya%20butuh%20Custom%20Web%20Tools.%20Bisa%20diskusi%20dulu?" class="btn-order" target="_blank">Konsultasi Dulu</a>
+                </div>
+
+                <!-- LAYANAN 6: SETUP EMAIL DOMAIN -->
+                <div class="menu-card">
+                    <div class="menu-icon">📧</div>
+                    <h3>Setup Email Domain Profesional</h3>
+                    <p>Ubah email Gmail biasa menjadi email bisnis (admin@tokosaya.com) agar terlihat bonafide di mata klien.</p>
+                    <ul class="features-list">
+                        <li>Setup Cloudflare + Zoho/ImprovMX</li>
+                        <li>Bisa Kirim & Terima Email</li>
+                        <li>Terintegrasi Aplikasi HP</li>
+                        <li>Panduan Penggunaan Lengkap</li>
+                        <li>Garansi Jalan 100%</li>
+                    </ul>
+                    <a href="https://wa.me/628562670252?text=Halo%20Mas%20Irkham,%20saya%20mau%20jasa%20Setup%20Email%20Domain%20Profesional." class="btn-order" target="_blank">Pesan via WhatsApp</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
