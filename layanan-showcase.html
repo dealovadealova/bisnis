@@ -38,30 +38,15 @@
         }
 
         .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            margin-bottom: 20px;
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--primary); text-decoration: none;
+            font-weight: 600; font-size: 14px; margin-bottom: 20px;
             transition: opacity 0.3s;
         }
         .back-link:hover { opacity: 0.7; }
 
-        .page-header h1 {
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 15px;
-            color: var(--text-dark);
-        }
-        .page-header p {
-            font-size: 16px;
-            color: var(--text-gray);
-            max-width: 600px;
-            margin: 0 auto;
-        }
+        .page-header h1 { font-size: 32px; font-weight: 800; margin-bottom: 15px; color: var(--text-dark); }
+        .page-header p { font-size: 16px; color: var(--text-gray); max-width: 600px; margin: 0 auto; }
 
         /* GRID LAYANAN */
         .services-menu { padding: 20px 0 80px; }
@@ -91,75 +76,125 @@
             border-color: var(--primary);
         }
 
-        /* Badge Populer */
         .badge-popular {
-            position: absolute;
-            top: 20px;
-            right: -30px;
-            background: var(--accent);
-            color: white;
-            font-size: 11px;
-            font-weight: 800;
-            padding: 5px 40px;
-            transform: rotate(45deg);
-            text-transform: uppercase;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: absolute; top: 20px; right: -30px;
+            background: var(--accent); color: white;
+            font-size: 11px; font-weight: 800;
+            padding: 5px 40px; transform: rotate(45deg);
+            text-transform: uppercase; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         .menu-icon {
-            font-size: 40px;
-            margin-bottom: 20px;
+            font-size: 40px; margin-bottom: 20px;
             background: var(--primary-light);
-            width: 70px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 70px; height: 70px;
+            display: flex; align-items: center; justify-content: center;
             border-radius: 18px;
         }
 
         .menu-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
         .menu-card p { font-size: 14px; color: var(--text-gray); margin-bottom: 20px; flex-grow: 1; }
 
-        .features-list {
-            list-style: none;
-            margin-bottom: 25px;
-        }
+        .features-list { list-style: none; margin-bottom: 25px; }
         .features-list li {
-            font-size: 13px;
-            color: var(--text-dark);
+            font-size: 13px; color: var(--text-dark);
             margin-bottom: 8px;
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
+            display: flex; align-items: flex-start; gap: 8px;
         }
-        .features-list li::before {
-            content: '✓';
-            color: var(--primary);
-            font-weight: 800;
+        .features-list li::before { content: '✓'; color: var(--primary); font-weight: 800; }
+
+        /* TOMBOL AKSI GANDA (PREVIEW & LIVE DEMO) */
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
         }
 
-        .btn-order {
-            display: block;
-            width: 100%;
+        .btn-action {
+            flex: 1;
             text-align: center;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            padding: 14px;
-            border-radius: 12px;
+            padding: 12px 10px;
+            border-radius: 10px;
             font-weight: 700;
-            font-size: 15px;
+            font-size: 13px;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .btn-preview {
+            background: #f1f5f9;
+            color: var(--primary);
+            border: 1px solid #e2e8f0;
+        }
+        .btn-preview:hover { background: var(--primary-light); border-color: var(--primary); }
+
+        .btn-demo {
+            background: var(--text-dark);
+            color: white;
+        }
+        .btn-demo:hover { background: #334155; transform: translateY(-2px); }
+
+        /* TOMBOL ORDER WA */
+        .btn-order {
+            display: block; width: 100%; text-align: center;
+            background: var(--wa); color: white;
+            text-decoration: none; padding: 14px;
+            border-radius: 12px; font-weight: 700; font-size: 15px;
             transition: background 0.3s;
         }
-        .btn-order:hover { background: #0d5f58; }
-        
-        .btn-order.wa { background: var(--wa); }
-        .btn-order.wa:hover { background: #20bd5a; }
+        .btn-order:hover { background: #20bd5a; }
+
+        /* CSS UNTUK MODAL (POPUP GAMBAR CLOUDINARY) */
+        .modal-overlay {
+            display: none;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.9);
+            z-index: 9999;
+            justify-content: center; align-items: center;
+            padding: 20px;
+            backdrop-filter: blur(8px);
+        }
+        .modal-content {
+            background: white;
+            padding: 15px;
+            border-radius: 20px;
+            max-width: 900px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: modalPop 0.3s ease-out;
+        }
+        @keyframes modalPop {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .modal-content img {
+            width: 100%;
+            border-radius: 12px;
+            display: block;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+        .modal-close {
+            position: absolute; top: -15px; right: -15px;
+            background: var(--primary); color: white;
+            width: 40px; height: 40px;
+            border-radius: 50%; border: none;
+            font-size: 20px; cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
 
         @media (max-width: 768px) {
             .page-header h1 { font-size: 26px; }
             .menu-grid { grid-template-columns: 1fr; }
+            .card-actions { flex-direction: column; } /* Tombol jadi atas-bawah di HP */
         }
     </style>
 </head>
@@ -170,7 +205,7 @@
         <div class="container">
             <a href="index.html" class="back-link">&larr; Kembali ke Beranda</a>
             <h1>Pilih Paket Layanan Showcase & Website</h1>
-            <p>Semua layanan di bawah ini dikerjakan menggunakan <b>"Super Smart Tools"</b> buatan sendiri, sehingga prosesnya cepat, presisi, dan mudah Anda kelola kedepannya.</p>
+            <p>Klik <b>"Lihat Gambar"</b> untuk detail desain, atau <b>"Live Demo"</b> untuk mencoba website secara langsung.</p>
         </div>
     </section>
 
@@ -179,7 +214,7 @@
         <div class="container">
             <div class="menu-grid">
                 
-                <!-- LAYANAN 1: SHOWCASE AFFILIATE (BEST SELLER) -->
+                <!-- LAYANAN 1: SHOWCASE AFFILIATE -->
                 <div class="menu-card">
                     <div class="badge-popular">Terlaris</div>
                     <div class="menu-icon">🛍️</div>
@@ -190,89 +225,93 @@
                         <li>Fitur Cari & Filter Kategori</li>
                         <li>Tombol WhatsApp & Shopee/TikTok</li>
                         <li>Gratis Domain .my.id (1 Tahun)</li>
-                        <li>Panduan PDF & Video Tutorial</li>
                     </ul>
-                    <a href="https://wa.me/628562670252?text=Halo%20Mas%20Irkham,%20saya%20tertarik%20order%20paket%20Showcase%20Affiliate%20(Google%20Sheets).%20Boleh%20info%20harganya?" class="btn-order wa" target="_blank">Pesan via WhatsApp</a>
+                    
+                    <!-- 2 TOMBOL AKSI -->
+                    <div class="card-actions">
+                        <!-- GANTI LINK DI BAWAH INI DENGAN LINK GAMBAR CLOUDINARY MAS -->
+                        <button class="btn-action btn-preview" onclick="openModal('https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg')">
+                            🖼️ Lihat Gambar
+                        </button>
+                        <!-- GANTI LINK DI BAWAH INI DENGAN LINK LIVE DEMO WEBSITE MAS -->
+                        <a href="https://almaira.pages.dev" target="_blank" class="btn-action btn-demo">
+                            🚀 Live Demo
+                        </a>
+                    </div>
+
+                    <a href="https://wa.me/628562670252?text=Halo%20Mas%20Irkham,%20saya%20tertarik%20order%20paket%20Showcase%20Affiliate." class="btn-order" target="_blank">Pesan via WhatsApp</a>
                 </div>
 
-                <!-- LAYANAN 2: LANDING PAGE PRODUK -->
+                <!-- LAYANAN 2: LANDING PAGE -->
                 <div class="menu-card">
                     <div class="menu-icon">🚀</div>
                     <h3>Landing Page Penjualan</h3>
                     <p>Halaman khusus 1 produk dengan struktur Copywriting yang memaksa pengunjung untuk klik beli. Cocok untuk iklan.</p>
                     <ul class="features-list">
                         <li>Desain Fokus Konversi (High CTR)</li>
-                        <li>Struktur: Headline, Masalah, Solusi, Testimoni</li>
+                        <li>Struktur: Headline, Masalah, Solusi</li>
                         <li>Tombol Sticky WhatsApp di Mobile</li>
                         <li>Loading Super Cepat (Score 90+)</li>
-                        <li>Revisi Desain 2x</li>
                     </ul>
-                    <a href="https://wa.me/628562670252?text=Halo%20Mas%20Irkham,%20saya%20tertarik%20order%20paket%20Landing%20Page%20Penjualan." class="btn-order" target="_blank">Pesan via WhatsApp</a>
+
+                    <div class="card-actions">
+                        <button class="btn-action btn-preview" onclick="openModal('https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg')">️ Lihat Gambar</button>
+                        <a href="https://contoh-landing-page.pages.dev" target="_blank" class="btn-action btn-demo"> Live Demo</a>
+                    </div>
+
+                    <a href="https://wa.me/628562670252?text=Halo%20Mas%20Irkham,%20saya%20tertarik%20order%20paket%20Landing%20Page." class="btn-order" target="_blank">Pesan via WhatsApp</a>
                 </div>
 
-                <!-- LAYANAN 3: LINK-IN-BIO PREMIUM -->
+                <!-- LAYANAN 3: LINK-IN-BIO -->
                 <div class="menu-card">
-                    <div class="menu-icon">🔗</div>
+                    <div class="menu-icon"></div>
                     <h3>Link-in-Bio Premium</h3>
                     <p>Ganti Linktree dengan halaman bio estetik milik sendiri. Tanpa biaya bulanan, tanpa iklan orang lain.</p>
                     <ul class="features-list">
                         <li>Desain Minimalis & Elegan</li>
                         <li>Bisa Pakai Domain Sendiri</li>
-                        <li>Integrasi Analytics Sederhana</li>
                         <li>Tanpa Biaya Langganan Bulanan</li>
                         <li>Proses Jadi 1 Hari</li>
                     </ul>
-                    <a href="https://wa.me/628562670252?text=Halo%20Mas%20Irkham,%20saya%20tertarik%20order%20paket%20Link-in-Bio%20Premium." class="btn-order" target="_blank">Pesan via WhatsApp</a>
-                </div>
 
-                <!-- LAYANAN 4: WEBSITE ISLAMI / DAKWAH -->
-                <div class="menu-card">
-                    <div class="menu-icon">🕌</div>
-                    <h3>Website Islami & Dakwah</h3>
-                    <p>Platform khusus untuk konten Islami, jadwal sholat, atau katalog buku/baju muslim dengan font Arab yang valid.</p>
-                    <ul class="features-list">
-                        <li>Font & Teks Arab 100% Valid (Tanpa Bertumpuk)</li>
-                        <li>Tema Warna Tenang & Syar'i</li>
-                        <li>Fitur Audio Murottal (Opsional)</li>
-                        <li>Database Konten via Google Sheets</li>
-                        <li>Gratis Konsultasi Konten</li>
-                    </ul>
-                    <a href="https://wa.me/628562670252?text=Halo%20Mas%20Irkham,%20saya%20tertarik%20order%20paket%20Website%20Islami%20/%20Dakwah." class="btn-order" target="_blank">Pesan via WhatsApp</a>
-                </div>
+                    <div class="card-actions">
+                        <button class="btn-action btn-preview" onclick="openModal('https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg')">️ Lihat Gambar</button>
+                        <a href="https://contoh-bio.pages.dev" target="_blank" class="btn-action btn-demo"> Live Demo</a>
+                    </div>
 
-                <!-- LAYANAN 5: KALKULATOR / TOOLS KHUSUS -->
-                <div class="menu-card">
-                    <div class="menu-icon">🧮</div>
-                    <h3>Custom Web Tools</h3>
-                    <p>Butuh alat bantu di website? Misal: Kalkulator KPR, Kalkulator Zakat, atau Generator Teks Arab.</p>
-                    <ul class="features-list">
-                        <li>Dibuat Sesuai Kebutuhan Spesifik</li>
-                        <li>Logika Perhitungan Akurat</li>
-                        <li>UI/UX Modern & Mobile Friendly</li>
-                        <li>Bisa di-embed di website existing</li>
-                        <li>Source Code Diberikan</li>
-                    </ul>
-                    <a href="https://wa.me/628562670252?text=Halo%20Mas%20Irkham,%20saya%20butuh%20Custom%20Web%20Tools.%20Bisa%20diskusi%20dulu?" class="btn-order" target="_blank">Konsultasi Dulu</a>
-                </div>
-
-                <!-- LAYANAN 6: SETUP EMAIL DOMAIN -->
-                <div class="menu-card">
-                    <div class="menu-icon">📧</div>
-                    <h3>Setup Email Domain Profesional</h3>
-                    <p>Ubah email Gmail biasa menjadi email bisnis (admin@tokosaya.com) agar terlihat bonafide di mata klien.</p>
-                    <ul class="features-list">
-                        <li>Setup Cloudflare + Zoho/ImprovMX</li>
-                        <li>Bisa Kirim & Terima Email</li>
-                        <li>Terintegrasi Aplikasi HP</li>
-                        <li>Panduan Penggunaan Lengkap</li>
-                        <li>Garansi Jalan 100%</li>
-                    </ul>
-                    <a href="https://wa.me/628562670252?text=Halo%20Mas%20Irkham,%20saya%20mau%20jasa%20Setup%20Email%20Domain%20Profesional." class="btn-order" target="_blank">Pesan via WhatsApp</a>
+                    <a href="https://wa.me/628562670252?text=Halo%20Mas%20Irkham,%20saya%20tertarik%20order%20paket%20Link-in-Bio." class="btn-order" target="_blank">Pesan via WhatsApp</a>
                 </div>
 
             </div>
         </div>
     </section>
 
+    <!-- MODAL POPUP UNTUK GAMBAR CLOUDINARY -->
+    <div class="modal-overlay" id="previewModal" onclick="closeModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModalBtn()">✕</button>
+            <img id="modalImage" src="" alt="Contoh Hasil Pengerjaan">
+        </div>
+    </div>
+
+    <script>
+        function openModal(imageUrl) {
+            document.getElementById('modalImage').src = imageUrl;
+            document.getElementById('previewModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeModal(event) {
+            if (event.target === document.getElementById('previewModal')) {
+                document.getElementById('previewModal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        function closeModalBtn() {
+            document.getElementById('previewModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
 </body>
 </html>
