@@ -146,7 +146,7 @@
             gap: 25px;
         }
 
-        /* UPDATE: Menambahkan style agar <a> tag terlihat seperti div biasa tanpa garis bawah */
+        /* Style agar <a> tag terlihat seperti div biasa tanpa garis bawah */
         a.card {
             text-decoration: none;
             color: inherit;
@@ -163,14 +163,7 @@
             border: 1px solid #e2e8f0;
             position: relative;
             overflow: hidden;
-            height: 100%; /* Agar tinggi semua kotak sama rata */
-        }
-
-        a.card {
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
+            height: 100%;
         }
         
         .card:hover {
@@ -205,6 +198,42 @@
             align-items: center;
             gap: 5px;
         }
+
+        /* ========================================= */
+        /* CSS KHUSUS UNTUK KARTU "SOON" (BELUM AKTIF) */
+        /* ========================================= */
+        .badge-soon {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+            color: white;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 6px 40px;
+            transform: rotate(45deg);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+
+        .card-soon {
+            opacity: 0.65; /* Lebih pudar */
+            position: relative;
+        }
+        
+        .card-soon:hover {
+            transform: none !important; /* Matikan efek naik */
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05) !important;
+            border-color: #e2e8f0 !important;
+            cursor: not-allowed;
+        }
+
+        .card-soon .card-tag {
+            color: #64748b !important; /* Warna tag jadi abu-abu */
+        }
+        /* ========================================= */
 
         /* SUPER SMART TOOLS SECTION */
         .tools-section {
@@ -343,39 +372,42 @@
             
             <div class="grid">
                 
-                <!-- Jasa 1 (Sekarang jadi Link) -->
-<a href="layanan-showcase.html" class="card">
-    <div class="card-icon">🛍️</div>
-    <h3>Showcase Affiliate & UMKM</h3>
-    <p>Website katalog produk super cepat. Fokus 100% pada keunggulan produk, tombol WhatsApp otomatis, dan desain yang membuat buyer langsung klik beli!</p>
-    <div class="card-tag">Lihat Pilihan Paket ➔</div>
-</a>
+                <!-- Jasa 1: Showcase Affiliate (AKTIF - Link ke halaman layanan) -->
+                <a href="layanan-showcase.html" class="card">
+                    <div class="card-icon">🛍️</div>
+                    <h3>Showcase Affiliate & UMKM</h3>
+                    <p>Website katalog produk super cepat. Fokus 100% pada keunggulan produk, tombol WhatsApp otomatis, dan desain yang membuat buyer langsung klik beli!</p>
+                    <div class="card-tag">Lihat Pilihan Paket ➔</div>
+                </a>
 
-                <!-- Jasa 2 -->
-                <div class="card">
+                <!-- Jasa 2: Website Islami (SOON) -->
+                <div class="card card-soon">
+                    <div class="badge-soon">SOON</div>
                     <div class="card-icon">🕌</div>
                     <h3>Website Islami & Dakwah</h3>
                     <p>Tampilan tenang, estetis, dan nyaman dibaca. Dilengkapi format teks Arab yang rapi, valid, dan akurat sesuai kaidah (Quran & Hadits).</p>
-                    <div class="card-tag">Akurat & Menenangkan 🌿</div>
+                    <div class="card-tag">Segera Hadir 🌿</div>
                 </div>
 
-                <!-- Jasa 3 -->
-                <div class="card">
+                <!-- Jasa 3: Digitalisasi Konten Arab (SOON) -->
+                <div class="card card-soon">
+                    <div class="badge-soon">SOON</div>
                     <div class="card-icon">✍️</div>
                     <h3>Digitalisasi Konten Arab</h3>
                     <p>Solusi bagi penulis/kreator yang kesulitan menampilkan harakat dan teks Arab di web. Rapi, tidak bertumpuk, dan profesional.</p>
-                    <div class="card-tag">Presisi & Valid 🎯</div>
+                    <div class="card-tag">Segera Hadir 🎯</div>
                 </div>
 
-                <!-- Jasa 4 -->
-                <div class="card">
-                    <div class="card-icon">🔗</div>
-                    <h3>Link-in-Bio Premium</h3>
-                    <p>Halaman portofolio atau bio link yang estetik, cepat, dan privat. Tanpa foto wajah, fokus pada tipografi dan objek yang elegan.</p>
-                    <div class="card-tag">Estetik & Privat 🎨</div>
+                <!-- Jasa 4: Setup Email Domain Bisnis (BARU & SOON) -->
+                <div class="card card-soon">
+                    <div class="badge-soon">SOON</div>
+                    <div class="card-icon">📧</div>
+                    <h3>Setup Email Domain Bisnis</h3>
+                    <p>Ubah email Gmail biasa menjadi email profesional (admin@tokosaya.com) agar terlihat bonafide dan meningkatkan kepercayaan klien Anda.</p>
+                    <div class="card-tag">Segera Hadir 🚀</div>
                 </div>
 
-                <!-- ✨ BARU: Ebook Pengembangan Diri (Dibuat sebagai Link yang bisa diklik seluruh kotaknya) -->
+                <!-- Jasa 5: Ebook Pengembangan Diri (AKTIF - Link eksternal) -->
                 <a href="https://lynk.id/perssatu" target="_blank" class="card">
                     <div class="card-icon">📚</div>
                     <h3>Ebook Pengembangan Diri</h3>
